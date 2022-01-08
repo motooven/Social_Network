@@ -8,34 +8,4 @@
     "f f";
     grid-template-rows: 1fr 7fr 1fr;
     grid-template-columns: 2fr 9fr;
-
-}
-
-.header {
-    background-color: #ce9048;
-    grid-area: h;
-}
-.header img {
-    width: 10%;
-
-}
-
-.navbar {
-    background-color: #efcd06;
-    grid-area: n;
-}
-
-.content {
-    background-color: #89bd06;
-    grid-area: c;
-}
-.content img {
-    width: 100%;
-    height: 60%;
-
-}
-
-.footer {
-    background-color: #9879b1;
-    grid-area: f;
 }
