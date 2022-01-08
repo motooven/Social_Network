@@ -11,8 +11,8 @@ const Content = () => {
                 <div>My posts</div>
                 <div>New post</div>
                 <div>
-                    post 11 <br/>
-                    post 22
+                    post 1 <br/>
+                    post 2
                 </div>
             </div>
         </div>
