@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    flex-direction: row;
+}
+.name {
+    margin-left: 2%;
+    background-color: #dec5f5;
+}
+.message {
+    margin-left: 12%;
+    background-color: #dec5f5;
+}
+
+
+.name a {
+    text-decoration: none;
+    color: #0026de;
+}
+.name a.active {
+    color: red;
+}

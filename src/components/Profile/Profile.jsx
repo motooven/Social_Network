@@ -1,12 +1,12 @@
 import React from 'react'
-import Logo_02 from "../Logotip/logo_02.jpg"
-import s from "./Content.module.css"
-import Post from "./Post";
+import Arkane from "../../Logotip/Arkaneee.jpg"
+import s from "./Profile.module.css"
+import Post from "../Post/Post";
 
-const Content = () => {
+const Profile = () => {
     return (
         <div className={s.content}>
-            <img src={Logo_02} alt=""/>
+            <img src={Arkane} alt=""/>
             <div>
                 <div>av + description</div>
                 <div>My posts</div>
@@ -21,4 +21,4 @@ const Content = () => {
 }
 
 
-export default Content
+export default Profile

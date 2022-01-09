@@ -1,0 +1,10 @@
+.footer {
+    background-color: #9a73ba;
+    grid-area: f;
+}
+
+.footer img {
+    padding: 1%;
+    width: 50%;
+    margin-left: 12%;
+}

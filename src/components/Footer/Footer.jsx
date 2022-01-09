@@ -1,10 +1,11 @@
 import React from 'react'
 import s from './Footer.module.css'
+import Arkane from '../../Logotip/Arkane.png'
 
 const Footer = () => {
     return (
         <div className={s.footer}>
-            Footer
+            <img src={Arkane} alt=""/>
         </div>
     )
 }
