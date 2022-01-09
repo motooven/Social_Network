@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
 import "./App.css"
+import Dialogs from "./components/Dialogs";
 
 
 
@@ -12,7 +13,10 @@ function App() {
     <div className="app">
        <Header />
        <Navbar />
-       <Content />
+       <div className="dialogs">
+           <Dialogs />
+           {/*<Content />*/}
+       </div>
        <Footer />
     </div>
   );

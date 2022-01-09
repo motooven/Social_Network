@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo_02 from "../Logotip/logo_02.jpg"
 import s from "./Content.module.css"
+import Post from "./Post";
 
 const Content = () => {
     return (
@@ -9,11 +10,11 @@ const Content = () => {
             <div>
                 <div>av + description</div>
                 <div>My posts</div>
-                <div>New post</div>
-                <div>
-                    post 1 <br/>
-                    post 2
-                </div>
+                <textarea></textarea>
+                <button>add post</button>
+                <Post post="post 1" like="like 2"/>
+                <Post post="post 2" like="like 3"/>
+                <Post post="post 3" like="like 4"/>
             </div>
         </div>
     )

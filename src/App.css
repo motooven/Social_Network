@@ -9,3 +9,8 @@
     grid-template-rows: 1fr 7fr 1fr;
     grid-template-columns: 2fr 9fr;
 }
+
+.dialogs {
+    background-color: #89bd06;
+    grid-area: c;
+}
