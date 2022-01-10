@@ -1,31 +1,38 @@
 import React from 'react';
 import s from './Dialogs.module.css'
-import {NavLink} from "react-router-dom";
-
-// <div className={s.navbar}>
-//     <div><NavLink to="/profile"  activeClassName={s.active}>Profile</NavLink></div>
+import DialogItem from "./DialogItem/DialogItem";
+import MessageItem from "./MessageItem/MessageItem";
 
 
-const Dialogs = () => {
+
+const Dialogs = (props) => {
+
+    const dialogsElements = props.dialogsData.map( n => <DialogItem id={n.id} name={n.name} key={n.id} /> )
+    const messageElements = props.dialogsMessage.map( m => <MessageItem message={m.message} key={m.id} /> )
+    let element = React.createRef()
+
+    let addPost = () => {
+        let text = element.current.value
+        alert(text)
+    }
+
     return (
-        <div className={s.main}>
-            <div className={s.name}>
-                <div><NavLink to="/dialogs/1"  activeClassName={s.active}>Sveta</NavLink></div>
-                <div><NavLink to="/dialogs/2"  activeClassName={s.active}>Mashka</NavLink></div>
-                <div><NavLink to="/dialogs/3"  activeClassName={s.active}>Lizka</NavLink></div>
-                <div><NavLink to="/dialogs/4"  activeClassName={s.active}>Nasta</NavLink></div>
-                <div><NavLink to="/dialogs/5"  activeClassName={s.active}>Dasha</NavLink></div>
-            </div>
+        <div>
+            <div className={s.main}>
+                <div className={s.name}>
+                    {dialogsElements}
+                </div>
+                <div className={s.message}>
+                    {messageElements}
+                </div>
+            </div><hr/>
 
-            <div className={s.message}>
-                <div>Всем привет</div>
-                <div>Как ваши дела</div>
-                <div>О я тут новенькая</div>
-                <div>Хочу поехать в Крым</div>
-                <div>Кто вы такие?</div>
+            <div>
+                <textarea ref={element}></textarea><br/>
+                <button onClick={addPost}>add post</button>
             </div>
         </div>
-    );
-};
+
+    );};
 
 export default Dialogs;
