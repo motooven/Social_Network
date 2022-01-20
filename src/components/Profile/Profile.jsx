@@ -5,12 +5,14 @@ import MyPosts from "../MyPosts/MyPosts";
 
 const Profile = (props) => {
 
-
-
     return (
         <div className={s.content}>
             <Profileinfo />
-            <MyPosts dialogsPost={props.dialogsPost} addPost={props.addPost} />
+            <MyPosts dialogsPost={props.dialogsPost}
+                     newPostText={props.newPostText}
+                     dispatch={props.dispatch}
+
+            />
         </div>
     )
 }

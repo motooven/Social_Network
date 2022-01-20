@@ -2,18 +2,25 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
+import {addPostSecondPageActionCreator, updateNewPostTextSecondPageActionCreator} from "../../redux/state";
+
 
 
 
 const Dialogs = (props) => {
-
     const dialogsElements = props.dialogsData.map( n => <DialogItem id={n.id} name={n.name} key={n.id} /> )
     const messageElements = props.dialogsMessage.map( m => <MessageItem message={m.message} key={m.id} /> )
     let element = React.createRef()
 
+
+
     let addPost = () => {
-        let text = element.current.value
-        alert(text)
+        props.dispatch(addPostSecondPageActionCreator())
+    }
+
+    let onPostChange = () => {
+        let newText = element.current.value
+        props.dispatch(updateNewPostTextSecondPageActionCreator(newText))
     }
 
     return (
@@ -28,7 +35,7 @@ const Dialogs = (props) => {
             </div><hr/>
 
             <div>
-                <textarea ref={element}></textarea><br/>
+                <textarea  ref={element} value={props.newPostText} onChange={onPostChange}/><br/>
                 <button onClick={addPost}>add post</button>
             </div>
         </div>
