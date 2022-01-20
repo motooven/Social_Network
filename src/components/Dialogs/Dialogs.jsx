@@ -2,12 +2,14 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
-import {addPostSecondPageActionCreator, updateNewPostTextSecondPageActionCreator} from "../../redux/state";
+import {addPostSecondPageActionCreator, updateNewPostTextSecondPageActionCreator} from "../../redux/dialogs-reduceer";
+
 
 
 
 
 const Dialogs = (props) => {
+
     const dialogsElements = props.dialogsData.map( n => <DialogItem id={n.id} name={n.name} key={n.id} /> )
     const messageElements = props.dialogsMessage.map( m => <MessageItem message={m.message} key={m.id} /> )
     let element = React.createRef()
@@ -18,8 +20,8 @@ const Dialogs = (props) => {
         props.dispatch(addPostSecondPageActionCreator())
     }
 
-    let onPostChange = () => {
-        let newText = element.current.value
+    let onPostChange = (e) => {
+        let newText = e.target.value
         props.dispatch(updateNewPostTextSecondPageActionCreator(newText))
     }
 

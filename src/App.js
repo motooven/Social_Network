@@ -17,21 +17,15 @@ function App(props) {
        <Header />
        <Navbar />
        <div className="dialogs">
-           <Route path="/profile" render={()=> <Profile     dialogsPost={props.state.dialogsPage.Post}
-                                                            newPostText={props.state.dialogsPage.newPostText}
+           <Route path="/profile" render={()=> <Profile     dialogsPost={props.state.postPage.Post}
+                                                            newPostText={props.state.postPage.newPostText}
                                                             dispatch={props.dispatch}
-                                                            //addPost={props.addPost}
-                                                            //updateNewPostText={props.updateNewPostText}
                                                 /> } />
 
            <Route path="/dialogs" component={()=> <Dialogs dialogsData={props.state.profilePage.dialogsData}
                                                            dialogsMessage={props.state.profilePage.dialogsMessage}
                                                            newPostText={props.state.profilePage.newPostText}
                                                            dispatch={props.dispatch}
-                                                           //addPost={props.addPost}
-                                                           //updateNewPostTextSecondPage={props.updateNewPostTextSecondPage}
-                                                           //newPostText={props.state.profilePage.newPostText}
-                                                           //addPostSecondPage={props.addPostSecondPage}
                                                 />} />
 
            <Route path="/news" component={News} />

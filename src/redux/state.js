@@ -1,3 +1,7 @@
+import profileReducer from "./profile-reducer";
+import dialogReducer from "./dialogs-reduceer";
+import sidebarReducer from "./sidebar-reduser";
+
 let store = {
 
     _state: {
@@ -18,7 +22,7 @@ let store = {
 
             newPostText: "Hello"
         },
-        dialogsPage: {
+        postPage: {
             Post: [
                 {id:1, name: 'post 1', like: 'like 2'},
                 {id:2, name: 'post 2', like: 'like 3'}],
@@ -37,44 +41,14 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === "ADD-POST") {
-            let newPost = {
-                id: 3,
-                name: this._state.dialogsPage.newPostText,
-                like: 0,
-            }
-            this._state.dialogsPage.Post.push(newPost)
-            this._state.dialogsPage.newPostText = ''
-            this._callSubscriber(this._state)
-        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-            this._state.dialogsPage.newPostText = action.newText
-            this._callSubscriber(this._state)
-        } else if (action.type === "ADD-POST-SECOND-PAGE") {
-            let newPost = {
-                id: 6,
-                message: this._state.profilePage.newPostText,
-            }
-            this._state.profilePage.dialogsMessage.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this._callSubscriber(this._state)
-        } else if (action.type === "UPDATE-NEW-POST-TEXT-SECOND-PAGE") {
-            this._state.profilePage.newPostText = action.newText
-            this._callSubscriber(this._state)
-        }
 
-    },
+        this._state.postPage = profileReducer(this._state.postPage, action)
+        this._state.profilePage = dialogReducer(this._state.profilePage, action)
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action)
 
+        this._callSubscriber(this._state)
+    }
 }
-
-const ADD_POST = "ADD-POST"
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
-const ADD_POST_SECOND_PAGE = "ADD-POST-SECOND-PAGE"
-const UPDATE_NEW_POST_TEXT_SECOND_PAGE = "UPDATE-NEW-POST-TEXT-SECOND-PAGE"
-
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = () => ({type: UPDATE_NEW_POST_TEXT})
-export const addPostSecondPageActionCreator = () => ( {type: ADD_POST_SECOND_PAGE} )
-export const updateNewPostTextSecondPageActionCreator = (newText) => ( {type: UPDATE_NEW_POST_TEXT_SECOND_PAGE, newText: newText})
 
 export default store
 window.store = store

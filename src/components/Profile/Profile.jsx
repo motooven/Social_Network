@@ -5,6 +5,7 @@ import MyPosts from "../MyPosts/MyPosts";
 
 const Profile = (props) => {
 
+
     return (
         <div className={s.content}>
             <Profileinfo />
