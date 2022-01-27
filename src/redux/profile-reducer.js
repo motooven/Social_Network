@@ -1,23 +1,35 @@
 const ADD_POST = "ADD-POST"
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 
+let initialState = {
 
-const profileReducer = (state, action) => {
+        Post: [
+            {id:1, name: 'post 1', like: 'like 2'},
+            {id:2, name: 'post 2', like: 'like 3'}],
 
+        newPostText: "Mazday",
+
+}
+
+const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 3,
                 name: state.newPostText,
                 like: 0,
             }
-            state.Post.push(newPost)
-            state.newPostText = ''
-            return state
-
-        case UPDATE_NEW_POST_TEXT:
-             state.newPostText = action.newText
-             return state
+            let stateCopy = {...state}
+            stateCopy.Post = [...state.Post]
+            stateCopy.Post.push(newPost)
+            stateCopy.newPostText = ''
+            return stateCopy
+        }
+        case UPDATE_NEW_POST_TEXT: {
+             let stateCopy = {...state}
+            stateCopy.newPostText = action.newText
+             return stateCopy
+        }
         default:
              return state
     }
