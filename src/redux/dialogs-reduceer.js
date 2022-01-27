@@ -23,22 +23,17 @@ let initialState = {
 
 const dialogReducer = (state = initialState, action) => {
 
-    let stateCopy = {...state, dialogsMessage: [...state.dialogsMessage]}
-
     switch (action.type) {
         case ADD_POST_SECOND_PAGE: {
-            let newPost = {
-                id: 6,
-                message: state.newPostText,
-            }
-            stateCopy.dialogsMessage.push(newPost)
-            stateCopy.newPostText = ''
-            return stateCopy
-        }
+            let newPostText = state.newPostText
+            return  {
+               ...state,
+               newPostText: '',
+               dialogsMessage: [...state.dialogsMessage, {id: 6, message: newPostText}]
+            } }
 
         case UPDATE_NEW_POST_TEXT_SECOND_PAGE: {
-            stateCopy.newPostText = action.newText
-            return stateCopy
+            return  {...state, newPostText: action.newText }
         }
         default:
             return state
