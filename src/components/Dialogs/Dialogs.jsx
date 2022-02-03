@@ -2,14 +2,13 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
+import {Redirect} from "react-router-dom";
 
 
 const Dialogs = (props) => {
     const dialogsElements = props.dialogsData.map( n => <DialogItem id={n.id} name={n.name} key={n.id} /> )
     const messageElements = props.dialogsMessage.map( m => <MessageItem message={m.message} key={m.id} /> )
     let element = React.createRef()
-
-
 
     let addPost = () => {
         props.addPost()
@@ -19,6 +18,8 @@ const Dialogs = (props) => {
         let newText = e.target.value
         props.onPostChange(newText)
     }
+
+    if (!props.isAuth) return <Redirect to={'login'} />
 
     return (
         <div>

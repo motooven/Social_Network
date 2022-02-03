@@ -1,32 +1,45 @@
-import React from 'react';
+import React from 'react'
+import s from "./Users.module.css";
 import AvaUser from "../../Logotip/AvaUser.jpg";
-import *as  axios from "axios";
-import s from './Users.module.css'
+import {NavLink} from "react-router-dom";
 
 
-const Users = (props) => {
+let     Users = (props) => {
 
-    if (props.users.length === 0) {
-        debugger
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => {
-               props.setUsers(response.data.items)
-        })
+    let pageCount = Math.ceil(props.totalUsersCount / props.pageSize)
+
+    let pages = []
+    for (let i=1; i <= pageCount; i++) {
+        pages.push(i)
     }
-    debugger
-    return <div>
 
+    return <div>
+                <div>
+                    {pages.map(p => {
+                        return <span className={props.currentPage === p && s.pages}
+                                     onClick={ (e) => {
+                                         props.onPageChanged(p);
+                                     }}>{p}</span>
+                    })}
+                </div>
         {
             props.users.map( u => <div key={u.id}>
                 <span>
                     <div>
-                        <img src={u.photos.small != null ? u.photos.small : AvaUser } className={s.AvaUser} alt="pict"/>
+                        <NavLink to={'/profile/' + u.id}>
+                            <img src={u.photos.small != null ? u.photos.small : AvaUser } className={s.AvaUser} alt="pict"/>
+                        </NavLink>
                     </div>
                     <div>
-                        {
-                            u.followed ? <button onClick={()=> {props.unfollow(u.id)} }>Unfollow</button>
-                                       : <button onClick={()=> {props.follow(u.id)} }>Follow></button>
-                        }
+                          { u.followed
+                              ? <button
+                                disabled={props.followingInProgress.some(id=> id === u.id)}
+                                onClick={()=> {props.unfollow(u.id)}}>Unfollow</button>
+
+                              : <button
+                                disabled={props.followingInProgress.some(id=> id === u.id)}
+                                onClick={()=> {props.follow(u.id)}}>Follow></button>
+                          }
                     </div>
                 </span>
                 <span>
@@ -41,7 +54,7 @@ const Users = (props) => {
                 </span>
             </div> )
         }
-    </div>
-};
+           </div>
+}
 
-export default Users;
+export default Users
