@@ -2,7 +2,7 @@ import React from 'react';
 import Arkane from "../../../Logotip/Arkaneee.jpg";
 import s from './Profileinfo.module.css'
 import Preloader from "../../Preloader/Preloader";
-import {Redirect} from "react-router-dom";
+import ProfileStatus from "../ProfileStatus";
 
 const Profileinfo = (props) => {
     if (!props.profile) {
@@ -11,17 +11,18 @@ const Profileinfo = (props) => {
 
     return (
         <div className={s.ProInfo}>
-            <img src={Arkane} alt=""/>
+            {/*<img src={Arkane} alt=""/>*/}
             <div className={s.ProInfo__avDis}>
                 <img src={props.profile.photos.large} /><br/>
                 <div>{props.profile.fullName}</div>
                 <div>{props.profile.aboutMe}</div>
                 <div>{props.profile.contacts.vk}</div>
                 <div>{props.profile.lookingForAJobDescription}</div>
-
-
+                <hr/>
+                <ProfileStatus status="Hello my friends"/>
                 <br/><hr/>
-                av + description</div>
+
+            </div>
         </div>
     );
 };
