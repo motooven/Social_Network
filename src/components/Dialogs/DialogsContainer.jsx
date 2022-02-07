@@ -16,12 +16,11 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        addPost: () => {
-            dispatch(addPostSecondPageActionCreator())
+        addPost: (newMessageBody) => {
+
+            dispatch(addPostSecondPageActionCreator(newMessageBody))
         },
-        onPostChange: (newText) => {
-            dispatch(updateNewPostTextSecondPageActionCreator(newText))
-        }
+
     }
 }
 

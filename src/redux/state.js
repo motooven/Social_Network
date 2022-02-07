@@ -42,6 +42,7 @@ let store = {
 
     dispatch(action) {
 
+
         this._state.postPage = profileReducer(this._state.postPage, action)
         this._state.profilePage = dialogReducer(this._state.profilePage, action)
         this._state.sidebar = sidebarReducer(this._state.sidebar, action)

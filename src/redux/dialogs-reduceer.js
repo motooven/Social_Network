@@ -16,19 +16,15 @@ let initialState = {
             {id:3, message: 'Как ваши дела...'},
             {id:4, message: 'Пошлите гулять....'},
             {id:5, message: 'Как вы живете?.....'}],
-
-        newPostText: "Hello"
-
 }
 
 const dialogReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST_SECOND_PAGE: {
-            let newPostText = state.newPostText
+            let newPostText = action.newMessageBody
             return  {
                ...state,
-               newPostText: '',
                dialogsMessage: [...state.dialogsMessage, {id: 6, message: newPostText}]
             } }
 
@@ -41,7 +37,7 @@ const dialogReducer = (state = initialState, action) => {
 }
 
 
-export const addPostSecondPageActionCreator = () => ( {type: ADD_POST_SECOND_PAGE} )
+export const addPostSecondPageActionCreator = (newMessageBody) => ( {type: ADD_POST_SECOND_PAGE, newMessageBody} )
 export const updateNewPostTextSecondPageActionCreator = (newText) => ( {type: UPDATE_NEW_POST_TEXT_SECOND_PAGE, newText: newText})
 
 export default dialogReducer

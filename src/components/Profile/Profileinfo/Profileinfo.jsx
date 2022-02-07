@@ -9,6 +9,7 @@ const Profileinfo = (props) => {
         return <Preloader/>
     }
 
+
     return (
         <div className={s.ProInfo}>
             {/*<img src={Arkane} alt=""/>*/}
@@ -19,7 +20,7 @@ const Profileinfo = (props) => {
                 <div>{props.profile.contacts.vk}</div>
                 <div>{props.profile.lookingForAJobDescription}</div>
                 <hr/>
-                <ProfileStatus status="Hello my friends"/>
+                <ProfileStatus status={props.profile.aboutMe} updateStatus={props.updateStatus} />
                 <br/><hr/>
 
             </div>
