@@ -1,7 +1,7 @@
 import React from 'react';
 import Arkane from "../../../Logotip/Arkaneee.jpg";
 import s from './Profileinfo.module.css'
-import Preloader from "../../Preloader/Preloader";
+import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "../ProfileStatus";
 
 const Profileinfo = (props) => {
