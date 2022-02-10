@@ -5,10 +5,8 @@ import {BrowserRouter} from "react-router-dom";
 import store from "./redux/redux-store";
 import {Provider} from "react-redux";
 
-/*
 setInterval( () => {
     store.dispatch({type: "FACE"})}, 1000)
-*/
 
 
 ReactDOM.render(

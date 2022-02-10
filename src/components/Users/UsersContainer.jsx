@@ -4,7 +4,14 @@ import {follow,setCurrentPage,unfollow,toggleFollowingProgress,requestUsers} fro
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
 import {compose} from "redux";
-import {getCurrentPage,getFollowingInProgress,getIsFetching,getPageSize,getTotalUsersCount,getUsers} from "../../redux/users-selectors";
+import {
+    getCurrentPage,
+    getFollowingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount,
+    getUsers
+} from "../../redux/users-selectors";
 
 
 

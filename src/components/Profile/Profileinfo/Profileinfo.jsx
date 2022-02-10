@@ -3,6 +3,7 @@ import Arkane from "../../../Logotip/Arkaneee.jpg";
 import s from './Profileinfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "../ProfileStatus";
+import ProfileStatusWithHooks from "../ProfileStatusWithHooks";
 
 const Profileinfo = (props) => {
     if (!props.profile) {
@@ -20,7 +21,7 @@ const Profileinfo = (props) => {
                 <div>{props.profile.contacts.vk}</div>
                 <div>{props.profile.lookingForAJobDescription}</div>
                 <hr/>
-                <ProfileStatus status={props.profile.aboutMe} updateStatus={props.updateStatus} />
+                <ProfileStatusWithHooks status={props.profile.aboutMe} updateStatus={props.updateStatus} />
                 <br/><hr/>
 
             </div>

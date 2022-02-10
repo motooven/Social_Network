@@ -22,7 +22,7 @@ const usersReducer = (state = initialState, action) => {
 
     switch (action.type) {
 
-        //case "FACE": return {...state, face: state.face + 1}
+        case "FACE": return {...state, face: state.face + 1}
 
         case FOLLOW: {
             return {
