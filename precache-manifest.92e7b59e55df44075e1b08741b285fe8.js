@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "573e9d789bb78017b76c",
+    "revision": "f6fae1cc168ff10c2ad8",
     "url": "/Social_Network/static/css/main.c48347c0.chunk.css"
   },
   {
-    "revision": "573e9d789bb78017b76c",
-    "url": "/Social_Network/static/js/main.573e9d78.chunk.js"
+    "revision": "f6fae1cc168ff10c2ad8",
+    "url": "/Social_Network/static/js/main.f6fae1cc.chunk.js"
   },
   {
     "revision": "39088143b9fd5e521edc",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/Social_Network/static/js/2.797762bb.chunk.js"
   },
   {
-    "revision": "913f87244e57eca0ae5b",
-    "url": "/Social_Network/static/js/3.913f8724.chunk.js"
+    "revision": "643d933c5983f2d592f8",
+    "url": "/Social_Network/static/js/3.643d933c.chunk.js"
   },
   {
     "revision": "fcb76db1bad65ac8a78f",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/Social_Network/static/media/Arkane_user.bca42391.png"
   },
   {
-    "revision": "f68cac568e2943f8124083cc5e9603cd",
+    "revision": "2bde0967eecab3ceeb21edabd1fecb00",
     "url": "/Social_Network/index.html"
   }
 ];
