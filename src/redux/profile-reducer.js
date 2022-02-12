@@ -61,6 +61,7 @@ export const getUserProfile = (userId) => (dispatch) => {
     })
 }
 
+//через .then
 export const getStatus = (userId) => (dispatch) => {
     profileAPI.getStatus(userId)
         .then(response => {
@@ -70,13 +71,13 @@ export const getStatus = (userId) => (dispatch) => {
         })
 }
 
-export const updateStatus = (status) => (dispatch) => {
-    profileAPI.updateStatus(status)
-        .then(response => {
+//через async - await
+export const updateStatus = (status) => async (dispatch) => {
+   let response = await profileAPI.updateStatus(status)
+
             if (response.data.resultCode === 0) {
                 dispatch(setStatus(status))
             }
-        })
 }
 
 

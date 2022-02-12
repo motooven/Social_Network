@@ -21,20 +21,21 @@ let AddNewPostForm = (props) => {
 
 let AddNewPostFormRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm)
 
-const MyPosts = (props) => {
-    let dialogsElement = props.dialogsPost.map( p => <Post name={p.name} like={p.like} key={p.id} /> )
-    //let newPostElement = React.createRef()
+const MyPosts = React.memo(props => {
+        let dialogsElement = [...props.dialogsPost].reverse().map(p => <Post name={p.name} like={p.like} key={p.id}/>)
+        //let newPostElement = React.createRef()
 
-    let addPost = (values) => {
-        props.addPost(values.newPostText)
-    }
+        let addPost = (values) => {
+            props.addPost(values.newPostText)
+        }
 
-    return (
-        <div>
-            <AddNewPostFormRedux onSubmit={addPost} />
-            <br/>
-            {dialogsElement}
-        </div>
-    );};
+        return (
+            <div>
+                <AddNewPostFormRedux onSubmit={addPost}/>
+                <br/>
+                {dialogsElement}
+            </div>
+        );
+});
 
 export default MyPosts;
