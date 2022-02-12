@@ -10,11 +10,11 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS"
 
 let initialState = {
 
-        users: [ ],
+        users: [],
         pageSize: 5,
-        totalUsersCount: 150,
-        currentPage: 2,
-        isFetching: false,
+        totalUsersCount: 0,
+        currentPage: 1,
+        isFetching: true,
         followingInProgress: [],
 }
 
@@ -85,7 +85,7 @@ export const requestUsers = (page, pageSize) => {
     let data = await usersAPI.getUsers(page, pageSize)
         dispatch(toggleIsFetching(false))
         dispatch(setUsers(data.items))
-        //dispatch(setTotalUsersCount(data.totalCount)) //Огромная Лента нужно придумать ограничение
+        dispatch(setTotalUsersCount(data.totalCount)) //Огромная Лента нужно придумать ограничение
     }
 }
 
