@@ -1,7 +1,7 @@
 {
   "main.css": "/Social_Network/static/css/main.c48347c0.chunk.css",
-  "main.js": "/Social_Network/static/js/main.f853214b.chunk.js",
-  "main.js.map": "/Social_Network/static/js/main.f853214b.chunk.js.map",
+  "main.js": "/Social_Network/static/js/main.573e9d78.chunk.js",
+  "main.js.map": "/Social_Network/static/js/main.573e9d78.chunk.js.map",
   "static/css/1.253b609d.chunk.css": "/Social_Network/static/css/1.253b609d.chunk.css",
   "static/js/1.39088143.chunk.js": "/Social_Network/static/js/1.39088143.chunk.js",
   "static/js/1.39088143.chunk.js.map": "/Social_Network/static/js/1.39088143.chunk.js.map",
@@ -17,10 +17,10 @@
   "static/media/preloader.svg": "/Social_Network/static/media/preloader.6e7c9db7.svg",
   "static/media/Arkaneee.jpg": "/Social_Network/static/media/Arkaneee.b05c1c56.jpg",
   "static/media/Arkane_user.png": "/Social_Network/static/media/Arkane_user.bca42391.png",
-  "static/css/1.253b609d.chunk.css.map": "/Social_Network/static/css/1.253b609d.chunk.css.map",
   "static/css/2.6743fe75.chunk.css.map": "/Social_Network/static/css/2.6743fe75.chunk.css.map",
   "static/css/main.c48347c0.chunk.css.map": "/Social_Network/static/css/main.c48347c0.chunk.css.map",
+  "static/css/1.253b609d.chunk.css.map": "/Social_Network/static/css/1.253b609d.chunk.css.map",
   "index.html": "/Social_Network/index.html",
-  "precache-manifest.c12873c91b107c4ce621db2d4e5917fd.js": "/Social_Network/precache-manifest.c12873c91b107c4ce621db2d4e5917fd.js",
+  "precache-manifest.b28ab5f622dc0314323638babd0cbb38.js": "/Social_Network/precache-manifest.b28ab5f622dc0314323638babd0cbb38.js",
   "service-worker.js": "/Social_Network/service-worker.js"
 }
