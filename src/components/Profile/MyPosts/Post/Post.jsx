@@ -1,5 +1,5 @@
 import React from 'react';
-import Arkane from '../../../Logotip/Arkane_user.png'
+import Arkane from '../../../../Logotip/Arkane_user.png'
 import s from "./Post.module.css"
 
 

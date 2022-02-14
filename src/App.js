@@ -18,7 +18,7 @@ import Preloader from "./components/common/Preloader/Preloader";
 import {withSuspense} from "./components/hoc/withSuspense";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"))
-const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"))
+const ProfileContainer = React.lazy(() => import("./components/Profile/Profileinfo/ProfileContainer"))
 
 
 class App extends React.Component {

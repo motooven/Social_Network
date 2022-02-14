@@ -9,3 +9,13 @@
 .ProInfo__avDis img {
     width: 20%;
 }
+
+.contact {
+    padding-left: 3%;
+}
+
+.formSummaryError {
+    border: #0820fc 1px solid;
+    padding: 5px;
+    color: red;
+}
