@@ -7,6 +7,7 @@ import {reduxForm} from "redux-form";
 import {AddMessageForm} from "./AddMessageForm";
 
 
+
 const Dialogs = (props) => {
     const dialogsElements = props.dialogsData.map( n => <DialogItem id={n.id} name={n.name} key={n.id} /> )
     const messageElements = props.dialogsMessage.map( m => <MessageItem message={m.message} key={m.id} /> )

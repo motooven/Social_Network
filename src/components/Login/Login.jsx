@@ -7,6 +7,7 @@ import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import s from "../common/FormsControls/FormsControls.module.css"
 
+
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
 
     return  (

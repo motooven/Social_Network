@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
-import Arkane from "../../../Logotip/Arkaneee.jpg";
 import s from './Profileinfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
-import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import User_03 from "../../../Logotip/user_03.png"
 import ProfileDataForm from "./ProfileDataForm";
 
+
 const Profileinfo = ({profile,status,updateStatus,isOwner,savePhoto, saveProfile}) => {
         let [editMode, setEditMode] = useState(false)
-
 
     if (!profile) {
         return <Preloader/>
@@ -31,7 +29,6 @@ const Profileinfo = ({profile,status,updateStatus,isOwner,savePhoto, saveProfile
 
     return (
         <div className={s.ProInfo}>
-            {/*<img src={Arkane} alt=""/>*/}
             <div className={s.ProInfo__avDis}>
                 <img src={profile.photos.large || User_03} /><br/>
                 Загрузите новое фото ниже <br/><br/>
@@ -50,7 +47,6 @@ const Profileinfo = ({profile,status,updateStatus,isOwner,savePhoto, saveProfile
     );
 };
 
-
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
     return  <div>
                 { isOwner && <div><button onClick={goToEditMode}>Edit Mode</button><hr/></div> }
@@ -61,8 +57,6 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
                     {profile.lookingForAJob ? "yes" : "no"}
                 </div>
                 <div><b>О бо мне:</b> {profile.aboutMe}</div>
-                {/*<div><b>ВКонтакте:</b> {profile.contacts.vk}</div>*/}
-                {/*<div><b>Ютуб:</b> {profile.contacts.youtube}</div>*/}
                 <div><b>Статус:</b> {profile.lookingForAJobDescription}</div>
 
                 <div>
@@ -72,7 +66,6 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
                 </div>
             </div>
 }
-
 
 const Contact = ({contactTitle, contactValue}) => {
     return <div className={s.contact}><b>{contactTitle}</b>:{contactValue}</div>

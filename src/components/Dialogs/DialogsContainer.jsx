@@ -1,5 +1,5 @@
 import React from 'react'
-import {addPostSecondPageActionCreator, updateNewPostTextSecondPageActionCreator} from "../../redux/dialogs-reduceer";
+import {addPostSecondPageActionCreator} from "../../redux/dialogs-reduceer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";

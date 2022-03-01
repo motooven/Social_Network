@@ -77,7 +77,6 @@ let mapStateToProps = (state) => {
 //         }
 //     }
 // }
-
 //let withRedirect = withAuthRedirect(UsersContainer)
 
 

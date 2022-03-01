@@ -1,5 +1,6 @@
 import {usersAPI} from "./api/api";
 
+
 const FOLLOW = "FOLLOW"
 const UNFOLLOW = "UNFOLLOW"
 const SET_USERS = "SET_USERS"
@@ -8,8 +9,8 @@ const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT"
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING"
 const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS"
 
-let initialState = {
 
+let initialState = {
         users: [],
         pageSize: 5,
         totalUsersCount: 0,

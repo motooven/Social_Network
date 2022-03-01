@@ -1,6 +1,7 @@
 const ADD_POST_SECOND_PAGE = "ADD-POST-SECOND-PAGE"
 const UPDATE_NEW_POST_TEXT_SECOND_PAGE = "UPDATE-NEW-POST-TEXT-SECOND-PAGE"
 
+
 let initialState = {
 
         dialogsData: [

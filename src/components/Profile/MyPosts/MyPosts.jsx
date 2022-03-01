@@ -4,6 +4,7 @@ import {Field, reduxForm} from "redux-form";
 import {required, maxLengthCreator} from "../../../utils/validators";
 import {Textarea} from "../../common/FormsControls/FormsControls";
 
+
 const maxLength = maxLengthCreator(10)
 
 let AddNewPostForm = (props) => {
@@ -22,8 +23,8 @@ let AddNewPostForm = (props) => {
 let AddNewPostFormRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm)
 
 const MyPosts = React.memo(props => {
+
         let dialogsElement = [...props.dialogsPost].reverse().map(p => <Post name={p.name} like={p.like} key={p.id}/>)
-        //let newPostElement = React.createRef()
 
         let addPost = (values) => {
             props.addPost(values.newPostText)
